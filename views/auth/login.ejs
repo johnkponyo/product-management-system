@@ -1,0 +1,88 @@
+<html lang="en">
+
+<!--head-->
+<%- include('../partials/head.ejs') %>
+
+<body id="login">
+
+    <!--nav-->
+        <nav class="navbar  bg-dark navbar-dark sticky-top">
+          <div class="container-fluid">
+            <button class="navbar-toggler mx-auto" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar" style="border: 1px solid red;">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+              <ul id="nav-links" class="navbar-nav ">
+                <li class="nav-item">
+                  <a class="nav-link text-warning" href="/">Home</a>
+                </li>
+                
+                    <li class="nav-item">
+                      <a class="nav-link" href="/auth/login">Log In</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="/auth/signup">Sign Up</a> 
+                    </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+
+
+      <main class="mt-5 pt-5">
+        <div>
+            <h5>Log In</h5>
+        </div>
+        <p style="color: red;"><%= typeof errMsg !== 'undefined' ? errMsg : null %></p>
+        <p style="color: rgb(21, 181, 0);"><%= typeof msg !== 'undefined' ? msg : null %></p>
+        <div>
+          <form action="/auth/login" method="post">
+            <div class="form-floating form-group mb-3 mt-3">
+              <input type="text" class="form-control" id="email" placeholder="Enter username or email" name="credential" required>
+              <label for="email">Username or Email</label>
+            </div>
+            
+            <div class="form-floating mt-3 mb-3">
+              <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="password" required minlength="8">
+              <label for="pwd">Password</label>
+            </div>
+
+            <div class="pb-2">
+              <input  type="checkbox" id="togglePassword"> Show Password
+            </div>
+
+            <div class="pt-2" style="width: 100%;;">
+              <button type="submit" class="btn btn-dark">Log in</button>
+            </div>
+            <br>
+            <div class="d-flex justify-content-between align-items-center">
+              <div>
+                Not registered? <a href="/auth/signup">Request an account!</a>
+              </div>
+            </div>
+          </form>
+        </div>
+      </main>
+
+
+      <!--footer--> 
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+       $('#togglePassword').on('change', function(){
+                // Check if the checkbox is checked
+                if ($(this).is(':checked')) {
+                    // Change the input type to text to show the password
+                    $('#pwd').attr('type', 'text');
+                } else {
+                    // Change the input type back to password to hide the password
+                    $('#pwd').attr('type', 'password');
+                }
+            });
+    </script>
+   
+</body>
+</html>

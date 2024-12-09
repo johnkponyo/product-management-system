@@ -1,0 +1,150 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    
+}
+
+
+.bgimg {
+    background-image: url('/img/lbg.jpg');
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    color: white;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 25px;
+  }
+  
+  .topleft {
+    position: absolute;
+    top: 15;
+    left: 45%;
+  }
+  
+  .bottomleft {
+    position: absolute;
+    bottom: 0;
+    left: 16px;
+  }
+  
+  .middle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+ }
+
+  .middle a {
+    text-decoration: none;
+    
+  }
+
+#dive-in {
+    padding: 8px;
+    background-color: #f44336;
+    font-size: larger;
+    color: white;
+    border-radius: 0 20px 20px 0;
+    animation: blinkBackground 500ms infinite alternate;
+    font-weight: bolder;
+    width: fit-content;
+    margin: auto;
+    padding: 0 25px;
+}
+
+
+@keyframes blinkBackground {
+    from {
+      background-color: #f44336;
+    }
+    to {
+      background-color: #666564;
+    }
+  }
+
+  
+  hr {
+    margin: auto;
+    width: 40%;
+  }
+
+
+
+#nav-links {
+    /* float: right; */
+    text-align: center;
+    padding: 20px;
+}
+
+#nav-links a {
+    border-bottom: 1px solid white;
+}
+
+#nav-links .last{
+    border: none;
+}
+
+/* #login {
+    
+} */
+
+#login main {
+    width: 25%;
+    padding: 20px;
+    margin: auto;
+}
+
+
+
+
+
+@media only screen and (max-width:1790px) and (min-width:900px){
+  #login main {
+    width: 50%;
+    padding: 20px;
+    margin: auto;
+    /* border: 1px solid rgb(109, 247, 18); */
+  }
+}
+
+
+@media only screen and (max-width: 899px){
+  #login main {
+    width: 100%;
+    padding: 20px;
+    margin: auto;
+    /* border: 1px solid black; */
+  }
+}
+
+
+
+#about main {
+    width: 100%;
+    padding: 20px;
+    margin: auto;
+}
+
+#about #description {
+    text-align: center;
+    border: 1px solid rgb(204, 204, 203);
+    border-radius: 12px;
+    padding: 12px;
+    border-top: none;
+    border-bottom: none;
+    font-size: large;
+    margin: 20px;
+}
+
+footer {
+    padding: 20px;
+    background-color: rgb(204, 204, 203);
+    text-align: center;
+}
